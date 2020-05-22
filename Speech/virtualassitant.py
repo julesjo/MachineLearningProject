@@ -12,9 +12,11 @@ import wikipedia
 
 # Ignore any Warnings
 warnings.filterwarnings('ignore');
-friendName="Blue Iris"
+friendName="blue iris"
+HelpName="blue iris"
 confirmInput = 'Did you say?'
 introInput = "I am " + friendName + ", thank you for having me as your virtual friend!"
+GeneralGreeting = "Hi, I am " + friendName + " How are you today?"
 
 def StarterWords(input):
     Start_Words=['hey blue iris', "blue iris" , "hi"]
@@ -22,6 +24,10 @@ def StarterWords(input):
     for phrase in Start_Words:
         if phrase in input:
             return True
+    if input == friendName:
+        return True
+    if input == HelpName:
+        return True
     return False
 
 def recordAudio():
@@ -29,7 +35,6 @@ def recordAudio():
     with sr.Microphone() as source:
         print("I am listening ...");
         audio = r.listen(source)
-
     #Google
     data = ''
     try:
@@ -65,21 +70,58 @@ def GetCurrentDate():
 def SayHello(input):
     Greeting_Inputs=['hi','hey','hola','greetings','whatsup','hello'];
     Greeting_Response=['howdy','whats good','hola, como esta','greetings','how are you?','hello'];
-    #if input in Greeting_Inputs:
-    return input
+    for word in input.split():
+        if word.lower() in Greeting_Inputs:
+            return random.choice(Greeting_Response) + "."
+    return GeneralGreeting
 
+def GetPerson(input):
+    WordList=input.split()
+    person = "None"
+    for i in range(0,len(WordList)):
+        if i+3 <= (len(WordList) -1):
+            if ((WordList[i].lower() == 'who') and (WordList[i+1].lower() == 'is')):
+                person = WordList[i+2] + " " + WordList[i+3];
+                return person;
+    return person
 r1 = sr.Recognizer();
+
+def react(input):
+    if ('who is' in data.lower()):
+        person = GetPerson(data)
+        print(person)
+        if person != 'None':
+            wiki = wikipedia.summary(person, sentences=2);
+            reaction=wiki;
+        else:
+            reaction='Sorry, I am having trouble understanding, Could you ask the question again please?';
+    else:
+        reaction = SayHello(data);
+        reaction= "Talk More, I am here to listen " + reaction;
+    return reaction
+
 
 with sr.Microphone() as source:
     print("Speak Now")
     audio = r1.listen(source)
     print(r1.recognize_google(audio))
 
-
-if StarterWords(r1.recognize_google(audio)):
+i=0
+StarterWords(r1.recognize_google(audio))
+while True:
     data = recordAudio()
     Today = GetCurrentDate();
-    IrisResponse("Hi, How are you? " + Today + "\n" + introInput + "\n" + confirmInput + " " + data);
-
-
+    if(i==0):
+        reaction= react(data.lower());
+        FinalResponse="Hi, How are you? " + Today + "\n" + introInput + "\n" + confirmInput + " " + data + \
+                      " Talk More, I am here to listen ";
+        IrisResponse(FinalResponse);
+        IrisResponse(reaction);
+        i=i+1;
+    else:
+        if (data.lower() == 'stop'):
+            exit(0);
+        else:
+            reaction=react(data.lower());
+            IrisResponse(reaction);
 
