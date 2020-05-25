@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate
 from .models import Entry,Journal,AudioFile
 from .forms import register,talknow
 from .modules.speech import virtualassitant
+from .modules.nlp import languagebot
 # from django import templatetags
 # from django import template
 
@@ -17,6 +18,7 @@ def home(request):
 
 def startlistener(request):
     ScreenText=virtualassitant.StartListenser();
+
     #form=talknow()
     form=""
     # # if request.method == 'POST':

@@ -144,4 +144,4 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
 )
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+#django_heroku.settings(locals())

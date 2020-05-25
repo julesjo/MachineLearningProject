@@ -19,6 +19,9 @@ django-cors-headers = "*"
 requests = "*"
 gunicorn = "*"
 beautifulsoup4 = "*"
+nltk = "*"
+keras = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.7"
