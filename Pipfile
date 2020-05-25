@@ -6,22 +6,17 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-psycopg2-binary = "*"
-pyaudio = "*"
-gtts = "*"
-wikipedia = "*"
 speechrecognition = "*"
+psycopg2-binary = "*"
+gtts = "*"
 python-dotenv = "*"
-beautifulsoup4 = "*"
-django = "*"
-django-cors-headers = "*"
-django-crispy-forms = "*"
-django-gtts = "*"
-requests = "*"
-audio-processing = "*"
-gtts-token = "*"
-pyttsx = "*"
+wikipedia = "*"
+pyaudio = "*"
 pyttsx3 = "*"
+django = "*"
+django-crispy-forms = "*"
+django-cors-headers = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
