@@ -13,6 +13,7 @@ import calendar
 import random
 import sys
 import wikipedia
+from .nlp import callmybot as mybot
 
 
 # Ignore any Warnings
@@ -122,8 +123,8 @@ def react(input):
         else:
             reaction='Sorry, I am having trouble understanding, Could you ask the question again please?';
     else:
-        reaction = SayHello(input);
-        reaction= "Talk More, I am here to listen " + reaction;
+        reaction = mybot.chatbot_response(input.lower())
+        #reaction= "Talk More, I am here to listen " + reaction;
     return reaction
 
 
@@ -172,8 +173,10 @@ def StartListenser():
         Today = GetCurrentDate();
         if (i == 0):
             reaction = react(data.lower());
-            FinalResponse = "Hi, How are you? " + Today + "\n" + introInput + "\n" + confirmInput + " " + data + \
-                            " Talk More, I am here to listen ";
+            #FinalResponse = "Hi, How are you? " + Today + "\n" + introInput + "\n" + confirmInput + " " + data + \
+            #                 " Talk More, I am here to listen ";
+            FinalResponse = "Hi, How are you? " + Today + "\n" + introInput
+            #reaction=BlueIris.chatbot_response(data.lower())
             #IrisResponse(FinalResponse);
             #IrisResponse(reaction);
             ScreenText = FinalResponse + "\n" + reaction
@@ -184,6 +187,7 @@ def StartListenser():
                 ScreenText = "Thank you talking to me, hope we can catch up soon";
             else:
                 reaction = react(data.lower());
+                #reaction=BlueIris.chatbot_response(data.lower())
                 #IrisResponse(reaction);
                 ScreenText =reaction
         #print(ScreenText)

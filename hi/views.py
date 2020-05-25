@@ -3,8 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate
 from .models import Entry,Journal,AudioFile
 from .forms import register,talknow
-from .modules.speech import virtualassitant
-from .modules.nlp import languagebot
+from .modules.speech import BlueIris
 # from django import templatetags
 # from django import template
 
@@ -17,7 +16,7 @@ def home(request):
     return render(request,'index.html',{"form":form});
 
 def startlistener(request):
-    ScreenText=virtualassitant.StartListenser();
+    ScreenText=BlueIris.StartListenser();
 
     #form=talknow()
     form=""
@@ -33,6 +32,15 @@ def startlistener(request):
     # # else:
     # #     form = talknow()
     return render(request,'index.html',{"form":form,"ScreenText":ScreenText});
+
+def CallBlueIris(request):
+    return render(request,'bot/chatbot_model.h5')
+
+def BotData(request,data_tag):
+    file = 'bot/data/'
+    if(data_tag):
+        file = file + data_tag
+    return file
 
 def authenticate(request):
     user = authenticate(username='john', password='secret')
