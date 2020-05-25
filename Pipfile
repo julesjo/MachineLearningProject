@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+psycopg2-binary = "*"
+pyaudio = "*"
+gtts = "*"
+wikipedia = "*"
+speechrecognition = "*"
+python-dotenv = "*"
+beautifulsoup4 = "*"
+django = "*"
+django-cors-headers = "*"
+django-crispy-forms = "*"
+django-gtts = "*"
+requests = "*"
+audio-processing = "*"
+gtts-token = "*"
+pyttsx = "*"
+pyttsx3 = "*"
+
+[requires]
+python_version = "3.7"
