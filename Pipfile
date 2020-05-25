@@ -18,6 +18,7 @@ django-crispy-forms = "*"
 django-cors-headers = "*"
 requests = "*"
 gunicorn = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"
