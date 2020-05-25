@@ -17,6 +17,7 @@ django = "*"
 django-crispy-forms = "*"
 django-cors-headers = "*"
 requests = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
