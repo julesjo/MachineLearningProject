@@ -3,7 +3,7 @@
 
 import speech_recognition as sr
 import os
-#from gtts import gTTS
+from gtts import gTTS
 #from gtts import tts as gTTS
 # import gTTS
 import pyttsx3
@@ -67,18 +67,16 @@ def say(engine,input):
 def IrisResponse(input):
     #print(input)
     ScreenText = input
-    #audioObject = gTTS(text=input, lang='en',slow=False)
-    engine = init_engine()
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[17].id)
-    say(engine,input)
-    # audioObject = gTTS(input,lang="en")
-    # print("Trying to save the mp3 file .......................")
-    # audioObject.save('BlueIris_Response.mp3')
-    # #"mpg321 welcome.mp3")
+    audioObject = gTTS(text=input, lang='en',slow=False)
+    # engine = init_engine()
+    # voices = engine.getProperty('voices')
+    # engine.setProperty('voice', voices[17].id)
+    # say(engine,input)
 
-    #
-    #os.system('afplay BlueIris_Response.mp3')
+    # print("Trying to save the mp3 file .......................")
+    audioObject.save('BlueIris_Response.mp3')
+    # #"mpg321 welcome.mp3")
+    os.system('afplay BlueIris_Response.mp3')
     #return audioObject
 
 def GetCurrentDate():
@@ -154,6 +152,7 @@ def react(input):
 #             IrisResponse(reaction);
 
 def StartListenser():
+    ScreenText=""
     try:
         with sr.Microphone() as source:
             ScreenText="Speak Now"
