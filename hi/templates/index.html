@@ -18,30 +18,83 @@
 
   </div>
 {% endblock %}
-{% block content %}
-<div class="container-fluid">
-<!--<form method="post" class="from-group" action='/listener/'>-->
-{% csrf_token %}
-<div class="row myrow">
-    <div class="cols topheadcontent">
-            <p class="lead switchtext">Hi There!</p>
-            <p class="ScreenText" id="ScreenText">{{ ScreenText }}</p>
+{% block contenthome %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5" style="background-image: url('{% static 'images/AI.jpg' %}')">
+    <h1 class="display-4 font-weight-normal">Hi There!</h1>
+    <p class="lead font-weight-normal">It's Good to leave your shadow behind!</p>
+    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Thank you!!" data-content="Please click to know more about contributing">Like to Contribute?</button>
     </div>
-    <div class="cols topheadcontent">
-        <!--{#{{ form|crispy }}#}-->
-         <button type="submit" name="save" class="btn-transparent" id="mymic"><i class="fas fa-microphone-alt-slash fa-5x" style="color:lightblue;"></i></button>
-        <!--<img src="{% static 'images/mic.jpg' %}" width="330px" height="200px">-->
 
-        </div>
-    <div class="cols chatdiv" id="chatdiv">
-        fsfd
+</div>
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Interested in contributing</h2>
+      <p class="lead">mm.. yeah but, it kind of varies every time..</p>
     </div>
-</div>
-<!-- </form> -->
-</div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <blockquote class="blockquote text-center" style="color:grey;">
+      <p class="mb-0" style="color:grey;padding-top:33px;">Perfect, thats what we are looking to help on!</p>
+      <footer class="blockquote-footer">MyPresence <cite title="Source Title">You are in a right place</cite></footer>
+      </blockquote>
+      </div>
+  </div>
+  {% endblock %}
+  {% block logincontent %}
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-2 p-2">
+      <h2 class="display-6">Login</h2>
+      <p>Are you not a memeber already? <a href="register/">Sign up</a> <i class="fa fa-user-o" aria-hidden="true" style="color:blue;"></i></p>
+    </div>
+    <div class="bg-info shadow-sm mx-auto" style="width: 80%; height: 500px; border-radius: 21px 21px 0 0;padding-top:33px;padding-left:41px;color:#FFFFFF;">
+      {% if validity %}
+      <p style="color:orange;">{{ validity }}</p>
+      {% endif %}
+      <div class="col-md-4 col-sm-6 col-xs-8 text-left">
+    <form method="post" class="form-group" action='/login/'>
+        {% csrf_token %}
+        {{ form }}
+    <input type="hidden" name="next" value="{{ next }}" /> <br><br>
+    <button type="submit" name="save" class="btn btn-success">Login</button><br><br>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    </form>
+    </div>
+
+
+  </div>
+    </div>
+{% endblock %}
+{% block content %}
+
+    <div class="col-md-6 col-sm-6 col-xs-8 text-left">
+      <h5 class="display-6">Welcome {{ user.last_name }},{{ user.first_name }}</h5>
+    </div>
+  <div class="container-fluid">
+  <!--<form method="post" class="from-group" action='/listener/'>-->
+  {% csrf_token %}
+  <div class="row myrow">
+      <div class="cols topheadcontent">
+              <p class="lead switchtext">Hi There!</p>
+              <p class="ScreenText" id="ScreenText">{{ ScreenText }}</p>
+      </div>
+      <div class="cols topheadcontent">
+          <!--{#{{ form|crispy }}#}-->
+           <button type="submit" name="save" class="btn-transparent" id="mymic"><i class="fas fa-microphone-alt-slash fa-5x" style="color:lightblue;"></i></button>
+          <!--<img src="{% static 'images/mic.jpg' %}" width="330px" height="200px">-->
+
+          </div>
+      <div class="cols chatdiv" id="chatdiv">
+          fsfd
+      </div>
+  </div>
+  <!-- </form> -->
+  </div>
 
 {% endblock %}
-
+{% block contenthomeend %}
+</div>
+{% endblock %}
 {% block myscript %}
 <script src="{% static 'lib/js/logic.js' %}"></script>
 {% endblock %}

@@ -20,6 +20,11 @@
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand","I am still learning, please bare with me","I dont have that skill yet, I am learning everyday","Can you please try again, I will do my best to help you","I am learning everyday with your help, I currently do not have that skill yet"],
          "context": [""]
         },
+        {"tag": "motivation",
+         "patterns": ["can u motivate me","I am feeling lonely","I am feeling dull"],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand","I am still learning, please bare with me","I dont have that skill yet, I am learning everyday","Can you please try again, I will do my best to help you","I am learning everyday with your help, I currently do not have that skill yet"],
+         "context": [""]
+        },
         {"tag": "options",
          "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
          "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
