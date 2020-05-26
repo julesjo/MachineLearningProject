@@ -6,8 +6,8 @@
          "context": [""]
         },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon.","please be safe, talk to you soon","I will be waiting to talk to you","I am so happy that we get to talk today","It was nice to have somebody to talk to"],
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time","cya","Goodbye", "I am Leaving", "Have a Good day"],
+         "responses": ["Talk to you later", "Goodbye!","See you!", "Have a nice day", "Bye! Come back again soon.","please be safe, talk to you soon","I will be waiting to talk to you","I am so happy that we get to talk today","It was nice to have somebody to talk to"],
          "context": [""]
         },
         {"tag": "thanks",
@@ -21,7 +21,7 @@
          "context": [""]
         },
         {"tag": "motivation",
-         "patterns": ["can u motivate me","I am feeling lonely","I am feeling dull"],
+         "patterns": ["I am feeling blue","I am feeling lonely","I am feeling dull","I am feeling discouraged"],
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand","I am still learning, please bare with me","I dont have that skill yet, I am learning everyday","Can you please try again, I will do my best to help you","I am learning everyday with your help, I currently do not have that skill yet"],
          "context": [""]
         },
