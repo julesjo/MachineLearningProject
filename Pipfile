@@ -20,8 +20,10 @@ requests = "*"
 gunicorn = "*"
 beautifulsoup4 = "*"
 nltk = "*"
-keras = "*"
 tensorflow = "*"
+keras = "*"
+langdetect = "*"
+googletrans = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,6 +1,6 @@
 import nltk
-# nltk.download('punkt')
-# nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
@@ -8,16 +8,16 @@ import pickle
 import sys,os
 
 import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from keras.optimizers import SGD
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.optimizers import SGD
 import random
 botpath=os. getcwd() + "/hi/static/bot/chatbot_model.h5"
 dataclasspath=os. getcwd() + "/hi/static/bot/data/classes.pkl"
 datawordspath=os. getcwd() + "/hi/static/bot/data/words.pkl"
 dataintentspath=os. getcwd() + "/hi/static/bot/data/intents.json"
 
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 model = load_model(botpath)
 #print(dataintentspath)
 intents = json.loads(open(dataintentspath).read())

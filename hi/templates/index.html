@@ -20,22 +20,24 @@
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
-<form method="post" class="from-group" action='/listener/'>
+<!--<form method="post" class="from-group" action='/listener/'>-->
 {% csrf_token %}
-<div class="row">
+<div class="row myrow">
     <div class="cols topheadcontent">
-            <p class="lead">Please talk now ... </p>
+            <p class="lead switchtext">Hi There!</p>
             <p class="ScreenText" id="ScreenText">{{ ScreenText }}</p>
     </div>
-    <div class="cols">
-        {{ form|crispy }}
-         <button type="submit" name="save" class="btn-success" id="btn-success"><img src="{% static 'images/mic.jpg' %}" width="330px" height="200px"></button>
-    </div>
-    <div class="cols" id="audiodiv">
+    <div class="cols topheadcontent">
+        <!--{#{{ form|crispy }}#}-->
+         <button type="submit" name="save" class="btn-transparent" id="mymic"><i class="fas fa-microphone-alt-slash fa-5x" style="color:lightblue;"></i></button>
+        <!--<img src="{% static 'images/mic.jpg' %}" width="330px" height="200px">-->
 
+        </div>
+    <div class="cols chatdiv" id="chatdiv">
+        fsfd
     </div>
 </div>
-</form>
+<!-- </form> -->
 </div>
 
 {% endblock %}

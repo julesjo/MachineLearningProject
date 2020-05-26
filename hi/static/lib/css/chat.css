@@ -1,0 +1,78 @@
+.chatdiv{
+    margin: 50px 50px 50px 50px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    overflow-y:auto;
+    float:right;
+    position:relative;
+}
+
+.btn-transparent {
+    background: transparent;
+    color: #F2F2F2;
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    border: 0px solid #4992B7;
+
+
+  }
+
+    .btn-transparent:hover {
+        color: white;
+        background-color: rgba(255,255,255,0.2);
+    }
+    .btn-recording{
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      -webkit-animation: glowing 1500ms infinite;
+      -moz-animation: glowing 1500ms infinite;
+      -o-animation: glowing 1500ms infinite;
+      animation: glowing 1500ms infinite;
+    }
+
+    .button {
+      background-color: #004A7F;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Arial;
+      font-size: 20px;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      -webkit-animation: glowing 1500ms infinite;
+      -moz-animation: glowing 1500ms infinite;
+      -o-animation: glowing 1500ms infinite;
+      animation: glowing 1500ms infinite;
+    }
+    @-webkit-keyframes glowing {
+      0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+      50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+      100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+    }
+
+    @-moz-keyframes glowing {
+      0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+      50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+      100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+    }
+
+    @-o-keyframes glowing {
+      0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+      50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+      100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+    }
+
+    @keyframes glowing {
+      0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+      50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+      100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+    }

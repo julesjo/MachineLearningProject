@@ -6,7 +6,7 @@ import os
 from gtts import gTTS
 #from gtts import tts as gTTS
 # import gTTS
-import pyttsx3
+#import pyttsx3
 import datetime
 import warnings
 import calendar
@@ -180,7 +180,7 @@ def StartListenser():
             #IrisResponse(FinalResponse);
             #IrisResponse(reaction);
             ScreenText = FinalResponse + "\n" + reaction
-            #i = i + 1;
+            i = i + 1;
         else:
             if (data.lower() == 'stop'):
                 #exit(0);
